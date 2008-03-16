@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: 
-  abbreviation: MyString
-
-two:
-  name: 
-  abbreviation: MyString
+alagoas:
+  name: Alagoas 
+  abbreviation: AL
