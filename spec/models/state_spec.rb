@@ -12,6 +12,8 @@ end
 describe State do
   include StateSpecHelper
   
+  fixtures :cities
+  
   before(:each) do
     @state = State.new
   end
@@ -32,6 +34,12 @@ describe State do
     @state.should have(1).error_on(:abbreviation)
     @state.abbreviation = "A"
     @state.should have(1).error_on(:abbreviation)
+  end
+  
+  it "should be related to city" do
+    @state.cities << cities(:maceio)
+    @state.cities.should include(cities(:maceio))
+    
   end
 
   it "should be valid" do

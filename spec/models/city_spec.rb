@@ -15,6 +15,12 @@ describe City do
     @city.should have(1).error_on(:state_id)
   end
   
+  it "should be related to State" do
+    @city.state = states(:alagoas)
+    @city.state.should eql(states(:alagoas))
+    
+  end
+  
   it "should be valid" do
     @city.name = "Maceio"
     @city.state = states(:alagoas)
