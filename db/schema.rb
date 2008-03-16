@@ -9,11 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "contact"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
