@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe City do
-  fixtures :states
+  fixtures :states, :clients
   
   before(:each) do
     @city = City.new
@@ -18,7 +18,11 @@ describe City do
   it "should be related to State" do
     @city.state = states(:alagoas)
     @city.state.should eql(states(:alagoas))
-    
+  end
+  
+  it "should be related to Clients" do
+    @city.clients << clients(:walmart)
+    @city.clients.should include(clients(:walmart))
   end
   
   it "should be valid" do
