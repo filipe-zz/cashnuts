@@ -4,14 +4,21 @@ describe City do
   fixtures :states, :clients
   
   before(:each) do
+    @valid_attr = {
+      :name => "Maceio",
+      :state => states(:alagoas)
+    }
+    
     @city = City.new
   end
   
   it "should have a name" do
+    @city.attributes = @valid_attr.except(:name)
     @city.should have(1).error_on(:name)
   end
   
   it "should have a state" do
+    @city.attributes = @valid_attr.except(:state)
     @city.should have(1).error_on(:state_id)
   end
   
@@ -26,8 +33,7 @@ describe City do
   end
   
   it "should be valid" do
-    @city.name = "Maceio"
-    @city.state = states(:alagoas)
+    @city.attributes = @valid_attr
     @city.should be_valid
   end
 end
