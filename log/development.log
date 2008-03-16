@@ -40,3 +40,34 @@ Migrating to CreateStates (1)
   [4;35;1mSQL (0.001555)[0m   [0mCREATE TABLE schema_info (version integer)[0m
   [4;36;1mSQL (0.001454)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
   [4;35;1mSQL (0.001428)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000237)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCities (2)
+  [4;35;1mSQL (0.003480)[0m   [0mCREATE TABLE cities ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "state_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001425)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000307)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000069)[0m   [0mPRAGMA index_list(cities)[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mPRAGMA index_list(states)[0m
+  [4;36;1mSQL (0.000231)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000416)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000292)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000065)[0m   [0mPRAGMA index_list(cities)[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mPRAGMA index_list(states)[0m
+  [4;35;1mSQL (0.000169)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: cities: DROP TABLE cities[0m
+  [4;35;1mSQL (0.002165)[0m   [0mCREATE TABLE cities ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "state_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: states: DROP TABLE states[0m
+  [4;35;1mSQL (0.002326)[0m   [0mCREATE TABLE states ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "abbreviation" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002610)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002838)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002432)[0m   [0;1mUPDATE schema_info SET version = 2[0m
