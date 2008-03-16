@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe City do
-  fixtures :states, :clients
+  fixtures :states, :clients, :cities
   
   before(:each) do
     @valid_attr = {
@@ -20,11 +20,6 @@ describe City do
   it "should have a state" do
     @city.attributes = @valid_attr.except(:state)
     @city.should have(1).error_on(:state_id)
-  end
-  
-  it "should be related to State" do
-    @city.state = states(:alagoas)
-    @city.state.should eql(states(:alagoas))
   end
   
   it "should be related to Clients" do

@@ -1,17 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  address: MyString
-  contact: MyString
-  phone: MyString
-  email: MyString
-  city: 
-
-two:
-  name: MyString
-  address: MyString
-  contact: MyString
-  phone: MyString
-  email: MyString
-  city: 
+transporte:
+  name: Transporte
+  address: Rua Barao de Penedo
+  contact: Joao Carlos
+  phone: 8811-0099
+  email: joao@transporte.com.br
+  city: maceio

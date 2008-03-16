@@ -1,15 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  manufacturer: MyString
+camisa:
+  name: Adidas
+  manufacturer: adidas
   price: 1.5
-  product_category: 
-  distributor: 
-
-two:
-  name: MyString
-  manufacturer: MyString
-  price: 1.5
-  product_category: 
-  distributor: 
+  product_category: camisa
+  distributor: transporte

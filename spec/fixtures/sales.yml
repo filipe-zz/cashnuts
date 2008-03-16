@@ -1,15 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  client: 
-  product: 
-  date: 2008-03-16
-  price: 1.5
-  quantity: 1
-
-two:
-  client: 
-  product: 
+  client: walmart
+  product: camisa
   date: 2008-03-16
   price: 1.5
   quantity: 1

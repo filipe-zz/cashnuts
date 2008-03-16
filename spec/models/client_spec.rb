@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Client do
-  fixtures :cities
+  fixtures :cities, :sales, :clients
   
   before(:each) do
     @valid_attr = {
@@ -33,10 +33,9 @@ describe Client do
     @client.should have(1).error_on(:city_id)
   end
   
-  it "should be related to a city" do
-    @client.city = cities(:maceio)
-    @client.city.should eql(cities(:maceio))
-    
+  it "should be related to Sales" do
+    @client.sales << sales(:one)
+    @client.sales.should include(sales(:one))
   end
   
   it "should be valid" do
