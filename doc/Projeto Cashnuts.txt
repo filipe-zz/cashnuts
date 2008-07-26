@@ -1,0 +1,42 @@
+1a fase
+Venda de produtos
+* Produtos estão dentro de grupos
+* Relatório mensal dos produtos vendidos por cliente, com o somatório de unidades no final
+
+Models definidos
+Grupos de produto
+	nome
+
+Unidades de medida
+	nome
+	simbolo
+
+Produtos
+	nome
+	Grupo
+	Unidade de medida
+	quantidade_por_caixa
+	peso_por_caixa
+
+Estado
+	nome
+	sigla
+
+Cliente
+	nome
+	endereco
+	bairro
+	cidade
+	Estado
+	contato
+	telefone
+	celular
+
+Venda
+	data
+	Cliente
+	
+Produtos da Venda
+	Venda
+	Produto
+	quantidade
