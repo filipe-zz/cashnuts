@@ -1,8 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-camisa:
-  name: Adidas
-  manufacturer: adidas
-  price: 1.5
-  product_category: camisa
-  distributor: transporte

@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-walmart:
-  name: WalMart
-  address: MyString
-  contact: MyString
-  phone: MyString
-  email: MyString
-  city: maceio

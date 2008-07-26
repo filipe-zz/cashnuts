@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-transporte:
-  name: Transporte
-  address: Rua Barao de Penedo
-  contact: Joao Carlos
-  phone: 8811-0099
-  email: joao@transporte.com.br
-  city: maceio
